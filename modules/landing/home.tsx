@@ -1,12 +1,21 @@
 "use client"
 
-import { useState } from "react"
+import {useState, FC} from "react"
 import {ProductLandingHeader} from "@/modules/landing/header";
 import {ProductLandingHero} from "@/modules/landing/hero";
 import {ProductLandingFooter} from "@/modules/landing/footer";
 import {ProductOverview} from "@/modules/landing/overview";
 
-export const ProductLandingPage = () => {
+export interface ProductLandingPageProps {
+    dict: {
+        header: any
+        hero: any
+        overview: any
+        footer: any
+    }
+}
+
+export const ProductLandingPage: FC<ProductLandingPageProps> = ({dict}) => {
     const [favorites, setFavorites] = useState<Set<number>>(new Set())
 
     const toggleFavorite = (productId: number) => {
@@ -24,16 +33,16 @@ export const ProductLandingPage = () => {
     return (
         <div className="min-h-screen bg-background">
             {/* Header */}
-            <ProductLandingHeader favorites={favorites} />
+            <ProductLandingHeader favorites={favorites} dict={dict.header} />
 
             {/* Hero Section */}
-            <ProductLandingHero />
+            <ProductLandingHero dict={dict.hero} />
 
             {/* Products Section */}
-            <ProductOverview favorites={favorites} toggleFavorite={toggleFavorite} />
+            <ProductOverview favorites={favorites} toggleFavorite={toggleFavorite} dict={dict.overview} />
 
             {/* Footer */}
-            <ProductLandingFooter />
+            <ProductLandingFooter dict={dict.footer} />
         </div>
     )
 }

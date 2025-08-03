@@ -5,9 +5,9 @@ export default async function HomePage({params}: {
   params: Promise<{ lang: 'en' | 'tr' }>
 }) {
   const { lang } = await params
-  const dict = await getDictionary(lang) // en
+  const dict = await getDictionary(lang)
 
   return (
-      <ProductLandingPage />
+      <ProductLandingPage dict={dict} />
     );
 }
