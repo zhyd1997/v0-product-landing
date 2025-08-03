@@ -5,10 +5,11 @@ export default function LoginNotFoundPage() {
         <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">Page Not Found</h2>
             <p className="text-muted-foreground mb-4">
-                The page you're looking for doesn't exist.
+              {/* eslint-disable-next-line react/no-unescaped-entities*/}
+              The page you're looking for doesn't exist.
             </p>
             <Link href="/" className="text-primary hover:underline">
-                Return Home
+              Return Home
             </Link>
         </div>
     );
