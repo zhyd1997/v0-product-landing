@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import {ThemeProvider} from "@/components/theme-provider";
 
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'tr' }]
@@ -49,11 +50,18 @@ export default async function RootLayout({
   const { lang } = await params;
 
   return (
-    <html lang={lang}>
+    <html lang={lang} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
         {children}
+      </ThemeProvider>
       </body>
     </html>
   );

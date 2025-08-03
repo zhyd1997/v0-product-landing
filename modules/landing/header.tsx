@@ -3,6 +3,7 @@ import {Heart, Menu, Search, ShoppingBag} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Badge} from "@/components/ui/badge";
 import type {FC} from "react";
+import {ModeToggle} from "@/components/mode-toggle";
 
 export interface HeaderProps {
     favorites: Set<number>;
@@ -48,6 +49,8 @@ export const ProductLandingHeader: FC<HeaderProps> = (props) => {
                             </Badge>
                         )}
                     </Button>
+
+                    <ModeToggle />
                     <Button variant="ghost" size="icon" className="md:hidden">
                         <Menu className="h-5 w-5" />
                     </Button>
