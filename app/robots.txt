@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://v0-product-landing-pied.vercel.app/sitemap.xml
