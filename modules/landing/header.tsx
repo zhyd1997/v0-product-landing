@@ -1,12 +1,11 @@
 import Link from "next/link";
-import {Heart, Menu, Search, ShoppingBag} from "lucide-react";
+import {Menu, Search, ShoppingBag} from "lucide-react";
 import {Button} from "@/components/ui/button";
-import {Badge} from "@/components/ui/badge";
 import type {FC} from "react";
 import {ModeToggle} from "@/components/mode-toggle";
+import {FavoritesCountBadge} from "@/modules/landing/favorites/CountBadge";
 
 export interface HeaderProps {
-    favorites: Set<number>;
     dict: {
         appName: string
         home: string
@@ -17,7 +16,7 @@ export interface HeaderProps {
 }
 
 export const ProductLandingHeader: FC<HeaderProps> = (props) => {
-    const {favorites, dict} = props;
+    const {dict} = props;
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -49,12 +48,7 @@ export const ProductLandingHeader: FC<HeaderProps> = (props) => {
                         <Search className="h-5 w-5" />
                     </Button>
                     <Button variant="ghost" size="icon" className="relative">
-                        <Heart className="h-5 w-5" />
-                        {favorites.size > 0 && (
-                            <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">
-                                {favorites.size}
-                            </Badge>
-                        )}
+                       <FavoritesCountBadge />
                     </Button>
 
                     <ModeToggle />

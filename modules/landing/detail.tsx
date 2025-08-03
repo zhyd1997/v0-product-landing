@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
@@ -5,11 +7,11 @@ import {Heart, Star} from "lucide-react";
 import {Card, CardContent} from "@/components/ui/card";
 import type {Product} from "@/modules/landing/constants/products";
 import type {FC} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {selectFavorites, toggle} from "@/lib/features/products/favoritesSlice";
 
 export interface ProductDetailProps {
     product: Product
-    favorites: Set<number>;
-    toggleFavorite: (productId: number) => void;
     dict: {
         badgeNew: string
         badgeSale: string
@@ -19,7 +21,15 @@ export interface ProductDetailProps {
 }
 
 export const ProductDetail: FC<ProductDetailProps> = (props) => {
-    const {product, favorites, toggleFavorite, dict} = props;
+    const {product, dict} = props;
+
+    const dispatch = useDispatch()
+
+    const favorites = useSelector(selectFavorites)
+
+    const toggleFavorite = () => {
+        dispatch(toggle(product.id))
+    }
 
     const renderStars = (rating: number) => {
         return Array.from({ length: 5 }, (_, i) => (
@@ -58,11 +68,11 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
                     variant="ghost"
                     size="icon"
                     className="absolute top-3 right-3 bg-white/80 hover:bg-white transition-all duration-200"
-                    onClick={() => toggleFavorite(product.id)}
+                    onClick={toggleFavorite}
                 >
                     <Heart
                         className={`h-5 w-5 transition-all duration-200 ${
-                            favorites.has(product.id)
+                            favorites.includes(product.id)
                                 ? "fill-red-500 text-red-500 scale-110"
                                 : "text-gray-600 hover:text-red-500"
                         }`}

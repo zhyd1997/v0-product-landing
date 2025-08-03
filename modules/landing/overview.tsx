@@ -4,7 +4,7 @@ import {ProductDetail} from "@/modules/landing/detail";
 import type { ProductDetailProps } from "@/modules/landing/detail";
 import type { Product } from "@/modules/landing/constants/products";
 
-export interface ProductOverviewProps extends Pick<ProductDetailProps, 'favorites' | 'toggleFavorite'> {
+export interface ProductOverviewProps {
     products: Product[]
     dict: {
         title: string
@@ -17,7 +17,7 @@ export interface ProductOverviewProps extends Pick<ProductDetailProps, 'favorite
 }
 
 export const ProductOverview: FC<ProductOverviewProps> = (props) => {
-    const {favorites, toggleFavorite, products, dict} = props;
+    const {products, dict} = props;
 
     return (
         <>
@@ -32,7 +32,7 @@ export const ProductOverview: FC<ProductOverviewProps> = (props) => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {products.map((product) => (
-                            <ProductDetail key={product.id} product={product} favorites={favorites} toggleFavorite={toggleFavorite} dict={dict.product} />
+                            <ProductDetail key={product.id} product={product} dict={dict.product} />
                         ))}
                     </div>
                 </div>
