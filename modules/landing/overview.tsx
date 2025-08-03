@@ -1,10 +1,11 @@
 import {Button} from "@/components/ui/button";
-import {products} from "@/modules/landing/constants/products";
 import type {FC} from "react";
 import {ProductDetail} from "@/modules/landing/detail";
 import type { ProductDetailProps } from "@/modules/landing/detail";
+import type { Product } from "@/modules/landing/constants/products";
 
 export interface ProductOverviewProps extends Pick<ProductDetailProps, 'favorites' | 'toggleFavorite'> {
+    products: Product[]
     dict: {
         title: string
         description: string
@@ -16,7 +17,7 @@ export interface ProductOverviewProps extends Pick<ProductDetailProps, 'favorite
 }
 
 export const ProductOverview: FC<ProductOverviewProps> = (props) => {
-    const {favorites, toggleFavorite, dict} = props;
+    const {favorites, toggleFavorite, products, dict} = props;
 
     return (
         <>

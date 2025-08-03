@@ -1,5 +1,6 @@
 {
   "header": {
+    "appName": "ShopHub",
     "home": "Home",
     "products": "Products",
     "categories": "Categories",
@@ -25,6 +26,7 @@
     }
   },
   "footer": {
+    "appName": "ShopHub",
     "tagline": "Your one-stop destination for amazing products at great prices.",
     "shop": {
       "title": "Shop",

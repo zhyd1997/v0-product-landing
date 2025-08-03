@@ -1,5 +1,6 @@
 {
   "header": {
+    "appName": "MağazaHub",
     "home": "Ana Sayfa",
     "products": "Ürünler",
     "categories": "Kategoriler",
@@ -20,11 +21,12 @@
     "product": {
       "badgeNew": "Yeni",
       "badgeSale": "İndirim",
-      "reviews": "yorum",
+      "reviews": "inceleme",
       "addToCart": "Sepete Ekle"
     }
   },
   "footer": {
+    "appName": "MağazaHub",
     "tagline": "Uygun fiyatlarla harika ürünler için tek adresiniz.",
     "shop": {
       "title": "Mağaza",

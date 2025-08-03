@@ -4,6 +4,7 @@ import type {FC} from "react";
 
 interface FooterProps {
     dict: {
+        appName: string
         tagline: string
         shop: {
             title: string
@@ -38,7 +39,7 @@ export const ProductLandingFooter: FC<FooterProps> = ({dict}) => {
                     <div>
                         <div className="flex items-center space-x-2 mb-4">
                             <ShoppingBag className="h-6 w-6" />
-                            <span className="font-bold text-xl">ShopHub</span>
+                            <span className="font-bold text-xl">{dict.appName}</span>
                         </div>
                         <p className="text-muted-foreground">{dict.tagline}</p>
                     </div>
@@ -123,7 +124,7 @@ export const ProductLandingFooter: FC<FooterProps> = ({dict}) => {
                 </div>
 
                 <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-                    <p>&copy; {new Date().getFullYear()} ShopHub. {dict.rights}</p>
+                    <p>&copy; {new Date().getFullYear()} {dict.appName}. {dict.rights}</p>
                 </div>
             </div>
         </footer>
