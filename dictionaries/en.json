@@ -1,1 +1,54 @@
-{}
+{
+  "header": {
+    "appName": "ShopHub",
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Discover Amazing Products",
+    "description": "Find the perfect items for your lifestyle. From electronics to home essentials, we have everything you need at unbeatable prices.",
+    "shopNow": "Shop Now",
+    "viewCategories": "View Categories"
+  },
+  "overview": {
+    "title": "Featured Products",
+    "description": "Handpicked items that our customers love. Add them to your favorites to save for later!",
+    "ctaTitle": "Ready to Start Shopping?",
+    "ctaDescription": "Join thousands of satisfied customers and discover your new favorite products today.",
+    "ctaButton": "Browse All Products",
+    "product": {
+      "badgeNew": "New",
+      "badgeSale": "Sale",
+      "reviews": "reviews",
+      "addToCart": "Add to Cart"
+    }
+  },
+  "footer": {
+    "appName": "ShopHub",
+    "tagline": "Your one-stop destination for amazing products at great prices.",
+    "shop": {
+      "title": "Shop",
+      "allProducts": "All Products",
+      "electronics": "Electronics",
+      "homeGarden": "Home & Garden",
+      "fashion": "Fashion"
+    },
+    "support": {
+      "title": "Support",
+      "helpCenter": "Help Center",
+      "shippingInfo": "Shipping Info",
+      "returns": "Returns",
+      "contactUs": "Contact Us"
+    },
+    "company": {
+      "title": "Company",
+      "aboutUs": "About Us",
+      "careers": "Careers",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service"
+    },
+    "rights": "All rights reserved."
+  }
+}

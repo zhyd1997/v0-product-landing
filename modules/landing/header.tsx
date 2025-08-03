@@ -7,10 +7,17 @@ import {ModeToggle} from "@/components/mode-toggle";
 
 export interface HeaderProps {
     favorites: Set<number>;
+    dict: {
+        appName: string
+        home: string
+        products: string
+        categories: string
+        about: string
+    }
 }
 
 export const ProductLandingHeader: FC<HeaderProps> = (props) => {
-    const {favorites} = props;
+    const {favorites, dict} = props;
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -18,22 +25,22 @@ export const ProductLandingHeader: FC<HeaderProps> = (props) => {
                 <div className="flex items-center space-x-4">
                     <Link href="/" className="flex items-center space-x-2">
                         <ShoppingBag className="h-6 w-6" />
-                        <span className="font-bold text-xl">ShopHub</span>
+                        <span className="font-bold text-xl">{dict.appName}</span>
                     </Link>
                 </div>
 
                 <nav className="hidden md:flex items-center space-x-6">
                     <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
-                        Home
+                        {dict.home}
                     </Link>
                     <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
-                        Products
+                        {dict.products}
                     </Link>
                     <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
-                        Categories
+                        {dict.categories}
                     </Link>
                     <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
-                        About
+                        {dict.about}
                     </Link>
                 </nav>
 

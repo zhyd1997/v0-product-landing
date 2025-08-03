@@ -1,1 +1,54 @@
-{}
+{
+  "header": {
+    "appName": "MağazaHub",
+    "home": "Ana Sayfa",
+    "products": "Ürünler",
+    "categories": "Kategoriler",
+    "about": "Hakkımızda"
+  },
+  "hero": {
+    "title": "Harika Ürünleri Keşfedin",
+    "description": "Yaşam tarzınıza uygun mükemmel ürünleri bulun. Elektronikten ev ihtiyaçlarına kadar aradığınız her şey uygun fiyatlarla burada.",
+    "shopNow": "Alışverişe Başla",
+    "viewCategories": "Kategorileri Gör"
+  },
+  "overview": {
+    "title": "Öne Çıkan Ürünler",
+    "description": "Müşterilerimizin sevdiği ürünleri sizin için seçtik. Daha sonra kaydetmek için favorilerinize ekleyin!",
+    "ctaTitle": "Alışverişe Hazır mısınız?",
+    "ctaDescription": "Binlerce mutlu müşteriye katılın ve yeni favori ürünlerinizi keşfedin.",
+    "ctaButton": "Tüm Ürünleri Gör",
+    "product": {
+      "badgeNew": "Yeni",
+      "badgeSale": "İndirim",
+      "reviews": "inceleme",
+      "addToCart": "Sepete Ekle"
+    }
+  },
+  "footer": {
+    "appName": "MağazaHub",
+    "tagline": "Uygun fiyatlarla harika ürünler için tek adresiniz.",
+    "shop": {
+      "title": "Mağaza",
+      "allProducts": "Tüm Ürünler",
+      "electronics": "Elektronik",
+      "homeGarden": "Ev & Bahçe",
+      "fashion": "Moda"
+    },
+    "support": {
+      "title": "Destek",
+      "helpCenter": "Yardım Merkezi",
+      "shippingInfo": "Kargo Bilgisi",
+      "returns": "İadeler",
+      "contactUs": "Bize Ulaşın"
+    },
+    "company": {
+      "title": "Şirket",
+      "aboutUs": "Hakkımızda",
+      "careers": "Kariyer",
+      "privacyPolicy": "Gizlilik Politikası",
+      "termsOfService": "Kullanım Şartları"
+    },
+    "rights": "Tüm hakları saklıdır."
+  }
+}

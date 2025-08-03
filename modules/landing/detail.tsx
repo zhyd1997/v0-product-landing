@@ -10,10 +10,16 @@ export interface ProductDetailProps {
     product: Product
     favorites: Set<number>;
     toggleFavorite: (productId: number) => void;
+    dict: {
+        badgeNew: string
+        badgeSale: string
+        reviews: string
+        addToCart: string
+    }
 }
 
 export const ProductDetail: FC<ProductDetailProps> = (props) => {
-    const {product, favorites, toggleFavorite} = props;
+    const {product, favorites, toggleFavorite, dict} = props;
 
     const renderStars = (rating: number) => {
         return Array.from({ length: 5 }, (_, i) => (
@@ -43,8 +49,8 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
 
                 {/* Badges */}
                 <div className="absolute top-3 left-3 flex flex-col gap-2">
-                    {product.isNew && <Badge className="bg-green-500 hover:bg-green-600">New</Badge>}
-                    {product.isSale && <Badge className="bg-red-500 hover:bg-red-600">Sale</Badge>}
+                    {product.isNew && <Badge className="bg-green-500 hover:bg-green-600">{dict.badgeNew}</Badge>}
+                    {product.isSale && <Badge className="bg-red-500 hover:bg-red-600">{dict.badgeSale}</Badge>}
                 </div>
 
                 {/* Favorite Button */}
@@ -76,7 +82,7 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
                 <div className="flex items-center gap-2 mb-3">
                     <div className="flex items-center">{renderStars(product.rating)}</div>
                     <span className="text-sm text-muted-foreground">
-                      {product.rating} ({product.reviews} reviews)
+                      {product.rating} ({product.reviews} {dict.reviews})
                     </span>
                 </div>
 
@@ -87,7 +93,7 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
                             <span className="text-sm text-muted-foreground line-through">${product.originalPrice}</span>
                         )}
                     </div>
-                    <Button size="sm">Add to Cart</Button>
+                    <Button size="sm">{dict.addToCart}</Button>
                 </div>
             </CardContent>
         </Card>
