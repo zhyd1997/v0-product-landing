@@ -8,7 +8,7 @@ export default function LoginNotFoundPage() {
               {/* eslint-disable-next-line react/no-unescaped-entities*/}
               The page you're looking for doesn't exist.
             </p>
-            <Link href="/" className="text-primary hover:underline">
+            <Link href="/public" className="text-primary hover:underline">
               Return Home
             </Link>
         </div>
